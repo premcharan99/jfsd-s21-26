@@ -1,0 +1,455 @@
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body Styling */
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            overflow: hidden;
+             background: linear-gradient(135deg, #000000, #434343); /* Black gradient background */
+          
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Arial', sans-serif;
+            
+        }
+        /* Navbar Styling */
+        .navbar {
+            background: rgba(255, 255, 255, 0.1); /* Subtle white overlay */
+            backdrop-filter: blur(20px); /* Blurred background for glass effect */
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: red;
+            overflow: hidden;
+            padding: 10px 20px;
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 15px;
+            width: 90%;
+            z-index: 1000;
+            display: flex;
+            justify-content: center;
+            box-shadow: 0 8px 32px rgba(255, 255, 255, 0.2);
+        }
+
+        /* Navbar Links */
+        .navbar a {
+            color: white;
+            text-align: center;
+            padding: 12px 25px;
+            text-decoration: none;
+            font-size: 18px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            border-radius: 10px;
+            margin: 0 5px;
+            border: 2px solid white;
+        }
+
+        .navbar a:hover {
+            background-color: rgba(255, 255, 255, 0.3); /* Hover effect */
+            box-shadow: 0 10px 20px rgba(255, 255, 255, 0.3);
+            color: black;
+            transform: scale(1.1);
+        }
+        .navbar, form, h3 {
+    z-index: 2; /* Ensure these are above the bubbles */
+}
+        .project-title {
+            color: white;
+            font-size: 20px;
+            font-family: 'Arial', sans-serif;
+            font-weight: bold;
+            text-transform: uppercase;
+            background: linear-gradient(to right, #FFFFFF, #BBBBBB);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.1);
+            padding: 10px 0;
+            border-radius: 10px;
+            z-index: 1001; 
+            margin-top:10px;
+            margin-right: auto; /* Pushes the title to the left */
+        }
+        /* Responsive Navbar for smaller screens */
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                top: 0;
+                left: 0;
+                width: 100%;
+                transform: translateX(0);
+                padding: 20px;
+            }
+
+            .navbar a {
+                display: block;
+                margin: 5px 0;
+                width: 100%;
+                text-align: center;
+            }
+        }
+
+        /* Heading Styling */
+        h3 {
+            position: center; /* Position the heading absolutely within the parent */
+            top: 110px; /* Adjust to position it below the navbar */
+            left: 110px; /* Position it to the left */
+            color: white;
+            font-size: 28px;
+            font-family: 'Arial', sans-serif;
+            font-weight: bold;
+            text-transform: uppercase;
+            background: linear-gradient(to right, #FFFFFF, #BBBBBB);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.1);
+            padding: 10px 0;
+            border-radius: 10px;
+            z-index: 1001; /* Higher than the navbar to make it visible */
+         
+            
+            
+            
+        }
+
+        /* Form Container Styling */
+        form {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 200px;
+            border-radius: 20px;
+      
+            max-width: 600px;
+            margin: 10px auto;
+        
+            transition: all 0.3s ease-in-out;
+            position: relative;
+            backdrop-filter: blur(15px);
+       
+            z-index: 2;
+            
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
+            padding: 40px;
+
+            width: 110%;
+            box-shadow: 0 8px 32px rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        form input[type="text"],
+        form input[type="number"],
+        form input[type="date"],
+         form input[type="password"],
+        form input[type="email"],
+        form select {
+            background-color: rgba(255, 255, 255, 0.2);
+            color: black;
+            border: 1px solid #ddd;
+            padding: 12px;
+            border-radius: 12px;
+            font-size: 1em;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            margin-bottom: 15px;
+            transition: box-shadow 0.3s ease-in-out, background-color 0.3s ease-in-out;
+            backdrop-filter: blur(5px);
+        }
+
+        form input[type="text"]:focus,
+        form input[type="number"]:focus,
+        form input[type="date"]:focus,
+        form input[type="password"]:focus ,
+        form input[type="email"]:focus,
+        form select:focus {
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            outline: none;
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+
+        form label {
+            color: white;
+            font-size: 1.1em;
+            margin-bottom: 8px;
+            margin-right:12px;
+            display: white;
+            transition: color 0.3s ease-in-out;
+        }
+
+        form input[type="submit"],
+        form input[type="reset"] {
+            background-color: rgba(255, 255, 255, 0.2);
+            color: black;
+            padding: 10px 20px;
+            border-radius: 10px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        form input[type="submit"]:hover,
+        form input[type="reset"]:hover {
+            background-color: #C70039;
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        form input[type="reset"] {
+            background-color: #888;
+        }
+
+        form input[type="reset"]:hover {
+            background-color: #555;
+        }
+
+        @media (max-width: 600px) {
+            form {
+                width: 100%;
+                padding: 15px;
+                box-shadow: none;
+            }
+
+            form input[type="text"],
+            form input[type="number"],
+            form input[type="date"],
+            form input[type="email"],
+            form select {
+                font-size: 0.9em;
+                padding: 8px;
+            }
+
+            form input[type="submit"],
+            form input[type="reset"] {
+                font-size: 0.9em;
+                padding: 8px 16px;
+            }
+        }
+
+        /* Gender Group Styling */
+        .gender-group {
+        
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .gender-group label {
+            margin-right: 15px;
+            font-size: 1em;
+            color: white;
+        }
+
+        .gender-group input[type="radio"] {
+            margin-right: 5px;
+            transform: scale(1.2);
+        }
+      
+
+         /* Bubble Styling */
+.bubble {
+    width: 250px;
+    height: 250px;
+    background-color: rgba(255, 255, 255, 0.1); /* Lighter color for glass effect */
+    backdrop-filter: blur(30px); /* More blur for stronger glass effect */
+    border-radius: 50%;
+    position: absolute;
+    z-index: 1; /* Set z-index higher than the background but lower than form and navbar */
+    animation: float 8s infinite ease-in-out; /* Slower animation for smoother effect */
+}
+        /* Bubble Animations */
+        @keyframes float {
+            0% {
+                transform: translateY(0) rotate(0deg);
+            }
+            50% {
+                transform: translateY(-40px) rotate(180deg); /* Increased movement and rotation */
+            }
+            100% {
+                transform: translateY(0) rotate(360deg);
+            }
+        }
+
+        .bubble:nth-child(1) {
+            top: 20%;
+            left: 10%;
+        }
+
+        .bubble:nth-child(2) {
+            top: 40%;
+            left: 60%;
+        }
+
+        .bubble:nth-child(3) {
+            top: 70%;
+            left: 30%;
+        }
+        
+        
+        
+  .glass-table {
+    background: rgba(255, 255, 255, 0.1); /* Transparent white for glass effect */
+    backdrop-filter: blur(20px);
+    border-radius: 15px; /* Rounded edges */
+    box-shadow: 0 8px 32px rgba(255, 255, 255, 0.3); /* Slightly more pronounced shadow */
+    border: 1px solid rgba(255, 255, 255, 0.3); /* Slightly more pronounced border */
+    width: 80%; /* Adjusted width for centering */
+    margin: 40px auto; /* Center horizontally with margin */
+    padding: 20px;
+    text-align: center; /* Center text in cells */
+    font-family: 'Georgia', serif; /* Classic serif font for a more traditional look */
+    border-collapse: collapse; /* Remove double borders between cells */
+}
+
+.glass-table th, .glass-table td {
+    padding: 12px 15px; /* Adjusted padding for better spacing */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* Subtle border between rows */
+}
+
+.glass-table th {
+    background: rgba(255, 255, 255, 0.2); /* Slightly different background for headers */
+    color: white; /* Darker text for headers */
+    font-weight: bold; /* Bold text for headers */
+}
+
+.glass-table tr:nth-child(even) {
+    background: rgba(255, 255, 255, 0.05); /* Slightly different background for alternate rows */
+}
+
+.glass-table tr:hover {
+    background: rgba(255, 255, 255, 0.1); /* Highlight row on hover */
+}
+
+/* Rounded edges for first and last rows */
+.glass-table thead tr:first-child th:first-child {
+    border-top-left-radius: 15px;
+}
+
+.glass-table thead tr:first-child th:last-child {
+    border-top-right-radius: 15px;
+}
+
+.glass-table tbody tr:last-child td:first-child {
+    border-bottom-left-radius: 15px;
+}
+
+.glass-table tbody tr:last-child td:last-child {
+    border-bottom-right-radius: 15px;
+}
+  
+ /* Vertical Navbar Styling */
+.navbar_in {
+     background: rgba(255, 255, 255, 0.1);  /* Vibrant gradient background */
+    backdrop-filter: blur(20px); /* Blurred background for glass effect */
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #000000; /* White text for contrast */
+    overflow: hidden;
+    padding: 10px 20px;
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    border-radius: 15px;
+    height: 90%; /* Adjust height for full page */
+    width: 200px; /* Width of the vertical navbar */
+    z-index: 1000;
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    justify-content: flex-start;
+    align-items: center; /* Center align links horizontally */
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5); /* Subtle shadow */
+}
+
+/* Navbar Links */
+.navbar_in a {
+    color: #fff;
+    text-align: center;
+    padding: 12px 15px;
+    text-decoration: none;
+    font-size: 18px;
+    transition: background-color 0.3s ease, transform 0.3s ease, color 0.3s ease;
+    border-radius: 10px;
+    margin: 10px 0; /* Space between items */
+    width: 100%; /* Stretch to full width of navbar */
+    text-align: center;
+    background: linear-gradient(135deg, #4facfe, #00f2fe); /* Gradient background for links */
+    border: none;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Shadow for links */
+}
+
+/* Hover Effects */
+.navbar_in a:hover {
+    background: lightred; /* Vibrant hover gradient */
+    box-shadow: 0 10px 20px rgba(255, 255, 255, 0.5); /* Stronger shadow on hover */
+    color: #000; /* Dark text for contrast */
+    transform: scale(1.1) rotate(-1deg); /* Slight rotation for added effect */
+}
+
+/* Active Link Styling */
+.navbar_in a.active {
+    background: linear-gradient(135deg, #ff9966, #ff5e62); /* Highlight active link */
+    color: #fff; /* Ensure text is readable */
+    font-weight: bold;
+    box-shadow: 0 10px 20px rgba(255, 94, 98, 0.5);
+}
+
+/* Add an entry animation */
+.navbar_in a {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+  
+    /* Search Bar Styling (Positioning it in the top-right corner) */
+        .search-bar {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            align-items: center;
+            z-index: 1000; /* Ensure it's on top of other content */
+        }
+
+        .search-bar input {
+            padding: 8px 12px;
+            font-size: 16px;
+            width: 200px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .search-bar button {
+            padding: 8px 12px;
+            background-color: #00bcd4;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-left: 10px;
+            font-weight: bold;
+        }
+
+        .search-bar button:hover {
+            background-color: #007c8c;
+        }
+  
+  
+  
+  
